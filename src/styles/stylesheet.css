@@ -25,11 +25,11 @@ h1 {
 
 }
 
-.photoGrid{
-    max-width: 1000px;
-    margin: 0 auto; 
+.photoGrid {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .figure {
