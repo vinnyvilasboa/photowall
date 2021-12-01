@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 
 function Photo(props){
@@ -15,6 +16,12 @@ function Photo(props){
 
 }
 
+Photo.propTypes ={
+    post: PropTypes.object.isRequired,
+    onRemovePhoto: PropTypes.func.isRequired
+}
+
+//since this one isn't an array like Photowall, it's gonna be be categorized as an object
 
 
 export default Photo
