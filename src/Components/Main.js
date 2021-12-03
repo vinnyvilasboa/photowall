@@ -33,6 +33,8 @@ class Main extends Component {
         // console.log('constructor')
     }
 
+
+
     removePhoto(postRemoved) {
         // console.log(postRemoved.description)
         this.setState((state) => ({
@@ -40,6 +42,13 @@ class Main extends Component {
         }))
 
         //above the idea is to have the state update after onClick to equal to post NOT postRemoved
+    }
+
+
+    addPhoto(postSubmitted){
+        this.setState(state =>{
+            posts: state.posts.concat([postSubmitted])
+        })
     }
 
     navigate() {
@@ -56,6 +65,10 @@ class Main extends Component {
         console.log(prevState.posts)
         console.log(this.state)
     }
+
+
+
+
 /*since react 6 changed a lot i had to update it to match the elements, so far this part has been the most difficult and took me about a day to figure out.. the fragment wrap helped add multiple components to a single path */
     render() {
         return (
