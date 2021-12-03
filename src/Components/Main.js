@@ -63,7 +63,7 @@ class Main extends Component {
                 <Routes>
 
                     <Route
-                        path="/"
+                        exact path="/"
                         element={<>
                             <Title title={"PHOTOWALL"} />
                             <PhotoWall
@@ -72,7 +72,7 @@ class Main extends Component {
                                 onNavigate={this.navigate} />
                         </>} />
 
-                    <Route path="/AddPhoto" element={<AddPhoto />} />
+                    <Route exact path="/AddPhoto" element={<AddPhoto />} />
                 </Routes>
             </div>
         )
