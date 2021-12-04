@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from './Title'
 import PhotoWall from './PhotoWall'
 import AddPhoto from './AddPhoto'
+// import { useHistory } from "react-router-dom";
 import {
     Routes,
     Route
@@ -44,11 +45,11 @@ class Main extends Component {
         //above the idea is to have the state update after onClick to equal to post NOT postRemoved
     }
 
-
+//the function of AddPhoto is going to be passed down as a prop a component such as Addphoto
     addPhoto(postSubmitted){
-        this.setState(state =>{
+        this.setState(state =>({
             posts: state.posts.concat([postSubmitted])
-        })
+        }))
     }
 
     navigate() {
@@ -85,7 +86,22 @@ class Main extends Component {
                                 onNavigate={this.navigate} />
                         </>} />
 
-                    <Route exact path="/AddPhoto" element={<AddPhoto />} />
+                    {/* <Route exact path="/AddPhoto" element={<AddPhoto />} /> */}
+
+                    {/* <Route exact path="/AddPhoto" render = {({history})=> {
+                        return <AddPhoto onAddPhoto={(addedPost) => {
+                            this.addPhoto(addedPost);
+                            console.log(addedPost)
+                            this.props.history.push("/")
+                        }}/>
+                    }}/> */}
+                    <Route path ="/AddPhoto" element= {<AddPhoto onAddPhoto={(addedPost) => {
+                        this.addPhoto(addedPost);
+                        // this.props.history.push('/')
+                        
+                    }}/>}/>
+
+
                 </Routes>
             </div>
         )
@@ -94,5 +110,5 @@ class Main extends Component {
 
 }
 
-
+export * from "react-router";
 export default Main
